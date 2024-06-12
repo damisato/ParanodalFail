@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrir varias pestañas</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .mensaje {
+            font-size: 42pt;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+    <script type="text/javascript">
+        function abrirPestanas() {
+            var urls = [
+                'https://example.com/1',
+                'https://example.com/2',
+                'https://example.com/3',
+                // Añade aquí más URLs hasta llegar al número deseado
+            ];
+            for (var i = 0; i < urls.length; i++) {
+                window.open(urls[i], '_blank');
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="mensaje">
+        Haz click en "Permitir ventanas emergentes"<br>
+        y actualiza la página (F5).
+    </div>
+    <a href="#" onclick="abrirPestanas()" style="font-size: 24pt; display: block; text-align: center; margin-top: 20px;">Abrir varias pestañas</a>
+</body>
+</html>
