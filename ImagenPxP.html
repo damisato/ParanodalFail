@@ -8,7 +8,7 @@
         #container {
             width: 1920px; /* Ajusta el tamaño del contenedor según sea necesario */
             height: 1080px; /* Ajusta el tamaño del contenedor según sea necesario */
-            background-color: #0000;
+            background-color: #ddd;
             position: relative;
         }
         #image {
@@ -58,7 +58,7 @@
                 if (index < pixels.length) {
                     pixels[index].style.backgroundColor = 'transparent';
                     index++;
-                    setTimeout(showPixel, 500); // 500 ms por "píxel"
+                    setTimeout(showPixel, 10); // 500 ms por "píxel"
                 } else {
                     image.style.display = 'block'; // Muestra la imagen completa al finalizar
                 }
