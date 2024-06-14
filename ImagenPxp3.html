@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga Progresiva de Imagen</title>
+    <style>
+        #canvas {
+            background-color: #ddd;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" width="1920" height="808"></canvas>
+    
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        const image = new Image();
+        image.src = 'Tangerine2.png';
+
+        image.onload = () => {
+            const imgWidth = image.width;
+            const imgHeight = image.height;
+            const pixelSize = 1;
+            let x = 0;
+            let y = 0;
+
+            function drawPixel() {
+                if (y < imgHeight) {
+                    ctx.drawImage(image, x, y, pixelSize, pixelSize, x, y, pixelSize, pixelSize);
+                    x += pixelSize;
+                    if (x >= imgWidth) {
+                        x = 0;
+                        y += pixelSize;
+                    }
+                    setTimeout(drawPixel, 10); // 10 ms por "píxel"
+                }
+            }
+
+            drawPixel();
+        };
+    </script>
+</body>
+</html>
