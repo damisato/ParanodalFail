@@ -44,20 +44,29 @@
     <div id="canvas-container">
         <canvas id="canvas" width="1920" height="808"></canvas>
     </div>
-
     <script>
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
         const image = new Image();
         image.src = 'Tangerine2.png';
-
         image.onload = () => {
             const imgWidth = image.width;
             const imgHeight = image.height;
-            const pixelSize = 6;
+            const pixelSize = 10;
             let x = 0;
             let y = 0;
 
+
+    
+          
+            
+    
+
+          
+          Expand Down
+    
+    
+  
             function drawPixel() {
                 if (y < imgHeight) {
                     ctx.drawImage(image, x, y, pixelSize, pixelSize, x, y, pixelSize, pixelSize);
@@ -69,7 +78,6 @@
                     setTimeout(drawPixel, 0.002); // 10 ms por "píxel"
                 }
             }
-
             drawPixel();
         };
     </script>
