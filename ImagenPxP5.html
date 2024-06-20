@@ -55,18 +55,7 @@
             const pixelSize = 10;
             let x = 0;
             let y = 0;
-
-
-    
-          
-            
-    
-
-          
-          Expand Down
-    
-    
-  
+              
             function drawPixel() {
                 if (y < imgHeight) {
                     ctx.drawImage(image, x, y, pixelSize, pixelSize, x, y, pixelSize, pixelSize);
@@ -75,7 +64,7 @@
                         x = 0;
                         y += pixelSize;
                     }
-                    setTimeout(drawPixel, 0.002); // 10 ms por "píxel"
+                    setTimeout(drawPixel, 0.02); // 10 ms por "píxel"
                 }
             }
             drawPixel();
